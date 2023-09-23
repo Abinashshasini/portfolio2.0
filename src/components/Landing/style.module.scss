@@ -1,0 +1,70 @@
+.container {
+  position: relative;
+  display: flex;
+  height: 110vh;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+
+  .sliderContainer {
+    position: absolute;
+    top: calc(100vh - 350px);
+  }
+
+  .slider {
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .slider p {
+    position: relative;
+    margin: 0px;
+    color: white;
+    font-size: 17.5vw;
+    font-size: max(9em, 15vw);
+    font-weight: 500;
+    padding-right: 50px;
+  }
+
+  .slider p:nth-of-type(2) {
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+
+  .description {
+    position: absolute;
+    top: 35%;
+    left: 70%;
+    color: white;
+    font-size: clamp(1.55em, 2.3vw, 2.5em);
+    font-weight: 300;
+
+    p {
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+
+    svg {
+      transform: scale(2);
+      margin-bottom: 100px;
+    }
+  }
+}
+
+/* If the container is larger than 700px */
+@media screen and (max-width: 720px) {
+  .container {
+    .description {
+      top: calc(110vh - 250px);
+      left: 40px;
+
+      svg {
+        transform: scale(1.7);
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
