@@ -71,8 +71,8 @@ const Landing = () => {
             fill="white"
           />
         </svg>
-        <p>Freelance</p>
-        <p>Software Engineer</p>
+        <p>Software</p>
+        <p>Development Engineer</p>
       </div>
     </motion.main>
   );
