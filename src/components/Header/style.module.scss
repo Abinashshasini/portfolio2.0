@@ -9,6 +9,7 @@
   width: 100%;
   font-weight: 300;
   align-items: center;
+  overflow: hidden;
 
   .logo {
     display: flex;
@@ -66,7 +67,7 @@
     }
   }
 
-  .nav {
+  .navdesktop {
     display: flex;
     align-items: center;
 
@@ -99,6 +100,27 @@
 
     a {
       cursor: pointer;
+    }
+  }
+
+  .navmobile {
+    display: none;
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .header {
+    padding: 20px;
+    .navdesktop {
+      display: none;
+    }
+
+    .navmobile {
+      display: block;
     }
   }
 }

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { BiMenuAltRight } from 'react-icons/bi';
 import Button from '../../commons/Button';
 import Navigation from '../Navigation';
 import Magnetic from '../../commons/Magnetic';
@@ -58,7 +59,7 @@ const Header = () => {
             <p className={styles.shasini}>Shasini</p>
           </div>
         </div>
-        <div className={styles.nav}>
+        <div className={styles.navdesktop}>
           <Magnetic>
             <div className={styles.el}>
               <a>About</a>
@@ -83,6 +84,9 @@ const Header = () => {
               <div className={styles.indicator}></div>
             </div>
           </Magnetic>
+        </div>
+        <div className={styles.navmobile}>
+          <BiMenuAltRight />
         </div>
       </div>
       <div ref={button} className={styles.headerButtonContainer}>
