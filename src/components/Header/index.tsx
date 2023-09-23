@@ -85,7 +85,12 @@ const Header = () => {
             </div>
           </Magnetic>
         </div>
-        <div className={styles.navmobile}>
+        <div
+          className={styles.navmobile}
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+        >
           <BiMenuAltRight />
         </div>
       </div>

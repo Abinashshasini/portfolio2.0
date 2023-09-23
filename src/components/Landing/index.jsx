@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import React, { useLayoutEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { motion } from 'framer-motion';
-import BackgroundImage from '../../assets/background.jpg';
 import { slideUp } from './animation';
 import styles from './style.module.scss';
 
@@ -51,14 +51,30 @@ const Landing = () => {
       animate="enter"
       className={styles.container}
     >
-      <Image src={BackgroundImage.src} alt="background" fill={true} />
-      <div className={styles.sliderContainer}>
+      <div className={styles.imgContainer}>
+        <img
+          src="https://dennissnellenberg.com/assets/img/DSC07033.jpg"
+          alt="background"
+        />
+      </div>
+
+      <motion.div
+        variants={slideUp}
+        className={styles.sliderContainer}
+        initial="initial"
+        animate="enter"
+      >
         <div ref={slider} className={styles.slider}>
           <p ref={firstTextRef}>Abinash Shasini -</p>
           <p ref={secondTextRef}>Abinash Shasini -</p>
         </div>
-      </div>
-      <div data-scroll data-scroll-speed={0.1} className={styles.description}>
+      </motion.div>
+      <motion.div
+        className={styles.description}
+        variants={slideUp}
+        initial="initial"
+        animate="enter"
+      >
         <svg
           width="9"
           height="9"
@@ -73,7 +89,7 @@ const Landing = () => {
         </svg>
         <p>Software</p>
         <p>Development Engineer</p>
-      </div>
+      </motion.div>
     </motion.main>
   );
 };

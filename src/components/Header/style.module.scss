@@ -4,7 +4,7 @@
   z-index: 1;
   top: 0;
   color: white;
-  padding: 35px;
+  padding: 25px 40px;
   justify-content: space-between;
   width: 100%;
   font-weight: 300;
@@ -14,6 +14,7 @@
   .logo {
     display: flex;
     cursor: pointer;
+    align-items: center;
 
     p {
       margin: 0px;
@@ -26,6 +27,7 @@
       overflow: hidden;
       white-space: nowrap;
       margin-left: 5px;
+      font-size: 1.1rem;
       transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 
       p {
@@ -57,11 +59,11 @@
         }
 
         .abinash {
-          transform: translateX(-55px);
+          transform: translateX(-60px);
         }
 
         .shasini {
-          transform: translateX(-65px);
+          transform: translateX(-60px);
         }
       }
     }
@@ -77,6 +79,7 @@
       position: relative;
       z-index: 1;
       padding: 15px;
+      font-size: 1.1rem;
       cursor: pointer;
 
       &:hover {
