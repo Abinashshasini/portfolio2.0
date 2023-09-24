@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { menuSlide } from './animation';
 import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
+import styles from './style.module.scss';
 
 const navItems = [
   {
@@ -14,19 +14,19 @@ const navItems = [
   },
   {
     title: 'Work',
-    href: '/',
+    href: '/work',
   },
   {
     title: 'Projects',
-    href: '/',
+    href: '/projects',
   },
   {
     title: 'About',
-    href: '/',
+    href: '/about',
   },
   {
     title: 'Contact',
-    href: '/',
+    href: '/contact',
   },
 ];
 

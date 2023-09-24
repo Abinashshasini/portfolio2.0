@@ -29,7 +29,7 @@ const Header = () => {
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
-        end: window.innerHeight,
+        end: window.innerHeight - 600,
         onLeave: () => {
           gsap.to(button.current, {
             scale: 1,
@@ -38,11 +38,12 @@ const Header = () => {
           });
         },
         onEnterBack: () => {
-          gsap.to(
-            button.current,
-            { scale: 0, duration: 0.25, ease: 'power1.out' },
-            setIsActive(false)
-          );
+          gsap.to(button.current, {
+            scale: 0,
+            duration: 0.25,
+            ease: 'power1.out',
+          });
+          setIsActive(false);
         },
       },
     });
