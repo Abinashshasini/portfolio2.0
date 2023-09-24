@@ -78,7 +78,7 @@ const Landing = () => {
         initial="initial"
         animate="enter"
       >
-        <div data-scroll data-scroll-speed={0.2}>
+        <div data-scroll data-scroll-speed={0.1}>
           <svg
             width="9"
             height="9"

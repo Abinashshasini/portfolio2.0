@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import { menuSlide } from './animation';
 import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
@@ -13,15 +14,19 @@ const navItems = [
   },
   {
     title: 'Work',
-    href: '/work',
+    href: '/',
+  },
+  {
+    title: 'Projects',
+    href: '/',
   },
   {
     title: 'About',
-    href: '/about',
+    href: '/',
   },
   {
     title: 'Contact',
-    href: '/contact',
+    href: '/',
   },
 ];
 
@@ -29,47 +34,46 @@ export default function Navigation() {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
-  const menuSlide = {
-    initial: { x: 'calc(100% + 100px)' },
-    enter: { x: '0', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
-    exit: {
-      x: 'calc(100% + 100px)',
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
-    },
-  };
-
   return (
-    <motion.div
-      variants={menuSlide}
-      initial="initial"
-      animate="enter"
-      exit="exit"
-      className={styles.menu}
-    >
-      <div className={styles.body}>
-        <div
-          onMouseLeave={() => {
-            setSelectedIndicator(pathname);
-          }}
-          className={styles.nav}
-        >
+    <>
+      <div className={styles.overlay} />
+      <motion.div
+        variants={menuSlide}
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        className={styles.container}
+      >
+        <div className={styles.wraper}>
           <div className={styles.header}>
             <p>Navigation</p>
           </div>
-          {navItems.map((data, index) => {
-            return (
-              <Link
-                key={index}
-                data={{ ...data, index }}
-                isActive={selectedIndicator == data.href}
-                setSelectedIndicator={setSelectedIndicator}
-              ></Link>
-            );
-          })}
+          <div
+            onMouseLeave={() => {
+              setSelectedIndicator(pathname);
+            }}
+            className={styles.navItems}
+          >
+            {navItems.map((data, index) => {
+              return (
+                <Link
+                  key={index}
+                  data={{ ...data, index }}
+                  isActive={selectedIndicator == data.href}
+                  setSelectedIndicator={setSelectedIndicator}
+                ></Link>
+              );
+            })}
+          </div>
+          <div className={styles.footercontainer}>
+            <div className={styles.header}>
+              <p>Social Media</p>
+            </div>
+            <Footer />
+          </div>
         </div>
-        <Footer />
-      </div>
-      <Curve />
-    </motion.div>
+        <Curve />
+      </motion.div>
+    </>
   );
 }
