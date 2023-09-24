@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 100px;
+
+  .wraper {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 1.5rem;
+
+    .warperContainer {
+      & > h2 {
+        font-size: clamp(1.55em, 2.3vw, 2.5em);
+        line-height: 1.45;
+        font-weight: 500;
+      }
+
+      & > p {
+        line-height: 2;
+        padding-top: 2em;
+        font-weight: 400;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+/* If the container is larger than 700px */
+@media screen and (max-width: 720px) {
+  .wraper {
+    width: 80%;
+    padding: 0 20px;
+    flex-direction: column;
+  }
+}

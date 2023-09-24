@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Preloader from '@/components/Preloader';
 import Landing from '@/components/Landing';
-import styles from './page.module.css';
 import AboutMe from '@/components/About';
+import Work from '@/components/Work';
+import styles from './page.module.css';
 
 export default function Home() {
   // * State to show the preloader * //
@@ -33,7 +34,11 @@ export default function Home() {
         style={{ height: '100vh', width: '100%', background: 'lightblue' }}
       ></div> */}
       <Landing />
-      <AboutMe />
+      <div className={styles.clubContainer}>
+        <AboutMe />
+        <Work />
+      </div>
+
       <div
         style={{ height: '100vh', width: '100%', background: 'yellow' }}
       ></div>

@@ -4,7 +4,7 @@
   --color-border: rgba(28, 29, 32, 0.175);
   --color-blue: #455ce9;
   --color-black: #141516;
-  --color-lightgrey: #f9f9f9;
+  --color-lightgrey: hsl(210, 5%, 92%);
 }
 
 * {
