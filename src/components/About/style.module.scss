@@ -1,0 +1,73 @@
+@mixin text {
+  font-size: clamp(1.55em, 2.3vw, 2.5em);
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 1.5;
+}
+
+.container {
+  height: 80vh;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--color-lightgrey);
+  position: relative;
+  cursor: default;
+
+  .mask {
+    inset: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mask-image: url('../../assets/mask.svg');
+    background: var(--color-blue);
+    mask-repeat: no-repeat;
+    color: var(--color-white);
+    mask-size: 300px;
+    mask-position: 30%;
+
+    & > p {
+      width: 70%;
+      @include text;
+      margin-top: 100px;
+    }
+  }
+
+  .headingContainer {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: clamp(1rem, 1.5rem, 2rem);
+    margin-bottom: clamp(1rem, 1.5rem, 2rem);
+    width: 70%;
+    border-bottom: 1px solid var(--color-border);
+
+    & > h2 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: clamp(0.85em, 1.5vw, 2em);
+      line-height: 180%;
+      font-weight: 700;
+    }
+  }
+
+  .warper {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+
+    & > p {
+      @include text;
+      margin-right: 1.5vw;
+      color: var(--color-black);
+
+      & > span {
+        opacity: 0.2;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Preloader from '@/components/Preloader';
 import Landing from '@/components/Landing';
 import styles from './page.module.css';
+import AboutMe from '@/components/About';
 
 export default function Home() {
   // * State to show the preloader * //
@@ -28,7 +29,20 @@ export default function Home() {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
+      {/* <div
+        style={{ height: '100vh', width: '100%', background: 'lightblue' }}
+      ></div> */}
       <Landing />
+      <AboutMe />
+      <div
+        style={{ height: '100vh', width: '100%', background: 'yellow' }}
+      ></div>
+      <div
+        style={{ height: '100vh', width: '100%', background: 'white' }}
+      ></div>
+      <div
+        style={{ height: '100vh', width: '100%', background: 'white' }}
+      ></div>
       <div
         style={{ height: '100vh', width: '100%', background: 'white' }}
       ></div>
