@@ -29,7 +29,7 @@ const Header = () => {
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
-        end: window.innerHeight - 600,
+        end: window.innerHeight,
         onLeave: () => {
           gsap.to(button.current, {
             scale: 1,

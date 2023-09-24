@@ -5,10 +5,11 @@ import gsap from 'gsap';
 import { motion } from 'framer-motion';
 import { isMobile } from 'react-device-detect';
 import useMousePosition from '@/hooks/useMousePosition';
+import Heading from '@/commons/Heading';
 import styles from './style.module.scss';
 
 const phrase =
-  "Cool, Calm, and Code-Driven: I'm a software developer who's passionate about crafting exceptional digital experiences. With a blend of creative finesse and technical prowess, I tackle challenges head-on and sculpt user-centric solutions that make waves in the digital realm.";
+  "Cool, Calm, and Code-Driven: I'm a software developer who's passionate about crafting exceptional digital experiences. With a blend of creative finesse and technical prowess, I tackle challenges head-on and sculpt user-centric solutions that not only meet but exceed expectations.";
 
 const AboutMe = () => {
   // * Required ref & state to target every span item & container * //
@@ -58,7 +59,7 @@ const AboutMe = () => {
         scrub: true,
         start: '50% bottom',
         // @ts-ignore
-        end: `+=${containerRef.current.clientHeight / 1.2}`,
+        end: `+=${containerRef.current.clientHeight / 1.5}`,
       },
     });
   };
@@ -71,13 +72,7 @@ const AboutMe = () => {
 
   return (
     <section className={styles.container} ref={containerRef} id="about_me">
-      <div
-        className={styles.headingContainer}
-        data-scroll
-        data-scroll-speed={0.05}
-      >
-        <h2>About ME</h2>
-      </div>
+      <Heading title="About Me" />
       <div className={styles.warper}>{handleSplitPhrase()}</div>
       <motion.div
         className={styles.mask}
