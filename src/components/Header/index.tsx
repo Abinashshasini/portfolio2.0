@@ -51,14 +51,17 @@ const Header = () => {
   return (
     <>
       <div ref={header} className={styles.header}>
-        <div className={styles.logo}>
-          <p className={styles.copyright}>©</p>
-          <div className={styles.name}>
-            <p className={styles.codeBy}>Code by</p>
-            <p className={styles.abinash}>Abinash</p>
-            <p className={styles.shasini}>Shasini</p>
+        <Magnetic>
+          <div className={styles.logo}>
+            <p className={styles.copyright}>©</p>
+            <div className={styles.name}>
+              <p className={styles.codeBy}>Code by</p>
+              <p className={styles.abinash}>Abinash</p>
+              <p className={styles.shasini}>Shasini</p>
+            </div>
           </div>
-        </div>
+        </Magnetic>
+
         <div className={styles.navdesktop}>
           <Magnetic>
             <div className={styles.el}>

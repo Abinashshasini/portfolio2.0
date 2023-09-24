@@ -29,7 +29,9 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Landing />
-      <div style={{ height: '100vh', width: '100%', background: 'red' }}></div>
+      <div
+        style={{ height: '100vh', width: '100%', background: 'white' }}
+      ></div>
     </main>
   );
 }

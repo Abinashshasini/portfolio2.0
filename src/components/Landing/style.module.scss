@@ -38,6 +38,11 @@
     font-size: max(9em, 15vw);
     font-weight: 500;
     padding-right: 50px;
+
+    .bar {
+      font-size: 17.5vw;
+      font-size: max(9em, 15vw);
+    }
   }
 
   .slider p:nth-of-type(2) {
@@ -48,7 +53,7 @@
 
   .description {
     position: absolute;
-    top: 35%;
+    top: 20%;
     left: 70%;
     color: white;
     font-size: clamp(1.55em, 2.3vw, 2.5em);
@@ -59,10 +64,19 @@
       margin-bottom: 10px;
     }
 
-    svg {
-      transform: scale(2);
-      margin-bottom: 80px;
+    & svg {
+      transform: scale(2.5);
+      margin-bottom: 50px;
     }
+  }
+
+  .gitHub {
+    display: none;
+    position: fixed;
+    right: 25px;
+    bottom: 20px;
+    font-size: 2.5rem;
+    color: var(--color-white);
   }
 }
 
@@ -74,13 +88,17 @@
     }
 
     .description {
-      top: calc(110vh - 250px);
-      left: 40px;
+      top: calc(110vh - 410px);
+      left: 20px;
 
-      svg {
+      & svg {
         transform: scale(1.7);
         margin-bottom: 30px;
       }
+    }
+
+    .gitHub {
+      display: block;
     }
   }
 }
