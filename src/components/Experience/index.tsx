@@ -54,10 +54,10 @@ const Experience: FC = () => {
     <section className={styles.container} ref={containerRef}>
       <div className={styles.warper}>
         <Heading title="Experience" />
-        {/* <motion.div
+        <motion.div
           className={styles.progressBar}
           style={{ scaleY: scrollYProgress }}
-        ></motion.div> */}
+        ></motion.div>
         <ul className={styles.expContainer}>
           {experiences.map((elemnet) => (
             <Details data={elemnet} key={elemnet.key} />

@@ -17,11 +17,11 @@ const Year: FC<IProps> = ({ value, reference }) => {
   return (
     <figure className={styles.figure}>
       <svg viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="47" className={styles.circle1} />
+        <circle cx="50" cy="50" r="48" className={styles.circle1} />
         <motion.circle
           cx="50"
           cy="50"
-          r="47"
+          r="48"
           className={styles.circle2}
           style={{
             pathLength: scrollYProgress,

@@ -4,32 +4,74 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-left: calc(var(--section-padding) * 1);
   flex-direction: column;
 
   .warper {
-    width: 70%;
+    width: 50%;
     height: 100%;
     padding-top: calc(var(--section-padding) * 1);
-    padding-bottom: calc(var(--section-padding) * 1);
+    margin-bottom: calc(var(--section-padding) * 1);
     overflow: hidden;
+    position: relative;
 
     .experienceWrp {
-      margin-bottom: 6vw;
+      margin-bottom: 4vw;
       display: flex;
       gap: 3em;
 
-      .yearWrp {
-        font-size: clamp(1.5rem, 6vw, 3rem);
+      .descWrp {
+        margin-top: 1rem;
+        & > h3 {
+          font-weight: 500;
+          font-size: clamp(1rem, 3vw, 1.5rem);
+          color: var(--color-black);
+          margin: 0;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+
+          & > span {
+            font-weight: 300;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            display: inline-block;
+            margin-left: 5px;
+          }
+        }
+
+        & > h4 {
+          font-weight: 400;
+          opacity: 0.8;
+          font-size: clamp(0.9rem, 2vw, 1.2rem);
+          color: var(--color-black);
+          margin: 0;
+          margin-bottom: 1rem;
+          text-transform: capitalize;
+        }
+
+        & > p {
+          font-weight: 300;
+          display: -webkit-box;
+          color: var(--color-black);
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          width: 100%;
+          overflow: hidden;
+          font-size: clamp(0.8rem, 1.5vw, 1rem);
+        }
       }
     }
   }
 
   .progressBar {
+    position: absolute;
+    left: 37px;
     height: 100%;
-    width: 10px;
+    width: 7px;
+    border-radius: 8px;
     transform-origin: top;
-    background-color: red;
+    opacity: 0.6;
+    background-color: var(--color-black);
   }
 }
 
@@ -45,16 +87,20 @@
     width: inherit;
     height: inherit;
     transform: rotate(-90deg);
+    background: white;
+    border-radius: 50%;
 
     .circle1 {
       stroke-width: 2;
       fill: none;
-      stroke: #58e6d9;
+      stroke: var(--color-border);
     }
 
     .circle2 {
       stroke-width: 5px;
-      stroke: #58e6d9;
+      stroke-linecap: round;
+      opacity: 0.7;
+      stroke: var(--color-black);
       fill: none;
     }
   }
@@ -73,6 +119,10 @@
       .experienceWrp {
         gap: 1.2em;
       }
+    }
+
+    .progressBar {
+      left: 27px;
     }
   }
 

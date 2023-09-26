@@ -10,7 +10,7 @@ import Experience from '@/components/Experience';
 
 export default function Home() {
   // * State to show the preloader * //
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   // * Effect to initialise the locomotive scroll and remove the preloader after 3s * //
   useEffect(() => {
@@ -31,19 +31,20 @@ export default function Home() {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-      <Landing />
-      <div className={styles.clubContainer}>
+      {/* <Landing /> */}
+      {/* <div className={styles.clubContainer}>
         <AboutMe />
         <Work />
       </div>
+       */}
+      <div
+        style={{ height: '100vh', width: '100%', background: 'iceblue' }}
+      ></div>
       <Experience />
-
       <div
         style={{ height: '100vh', width: '100%', background: 'yellow' }}
       ></div>
-      <div
-        style={{ height: '100vh', width: '100%', background: 'white' }}
-      ></div>
+
       <div
         style={{ height: '100vh', width: '100%', background: 'white' }}
       ></div>
