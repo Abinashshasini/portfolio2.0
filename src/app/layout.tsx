@@ -1,12 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Source_Sans_3 } from 'next/font/google';
+import { Josefin_Sans } from 'next/font/google';
 import Header from '@/components/Header';
 
-const font = Source_Sans_3({
-  weight: ['200', '300', '400', '600', '700'],
-  subsets: ['latin'],
-});
+// const font = Josefin_Sans({
+//   subsets: ['latin'],
+// });
 
 export const metadata: Metadata = {
   title: 'Abinash Shasini',
@@ -21,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body>
         <Header />
         {children}
       </body>

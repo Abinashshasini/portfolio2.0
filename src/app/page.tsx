@@ -6,6 +6,7 @@ import Landing from '@/components/Landing';
 import AboutMe from '@/components/About';
 import Work from '@/components/Work';
 import styles from './page.module.css';
+import Experience from '@/components/Experience';
 
 export default function Home() {
   // * State to show the preloader * //
@@ -30,14 +31,12 @@ export default function Home() {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-      {/* <div
-        style={{ height: '100vh', width: '100%', background: 'lightblue' }}
-      ></div> */}
       <Landing />
       <div className={styles.clubContainer}>
         <AboutMe />
         <Work />
       </div>
+      <Experience />
 
       <div
         style={{ height: '100vh', width: '100%', background: 'yellow' }}
