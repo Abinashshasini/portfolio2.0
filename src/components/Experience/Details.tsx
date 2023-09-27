@@ -1,6 +1,7 @@
 import React, { FC, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import styles from './style.module.scss';
+import { slideUp } from './animation';
 import Year from './Year';
 
 interface IProps {
@@ -17,6 +18,7 @@ interface IProps {
 const Details: FC<IProps> = ({ data }) => {
   // * State and Refs for experience section * //
   const experienceRef = useRef(null);
+  const isInView = useInView(experienceRef);
 
   return (
     <li key={data.key} className={styles.experienceWrp} ref={experienceRef}>
@@ -26,7 +28,20 @@ const Details: FC<IProps> = ({ data }) => {
           {data.role} <span>{data.timeline}</span>
         </h3>
         <h4>{data.companyName}</h4>
-        <p>{data.description}</p>
+        <p>
+          {data.description.split(' ').map((word, index) => (
+            <span key={index} className={styles.mask}>
+              <motion.span
+                variants={slideUp}
+                custom={index}
+                animate={isInView ? 'open' : 'closed'}
+                key={index}
+              >
+                {word}
+              </motion.span>
+            </span>
+          ))}
+        </p>
       </motion.div>
     </li>
   );

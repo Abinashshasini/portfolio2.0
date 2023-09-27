@@ -1,7 +1,9 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Heading from '@/commons/Heading';
 import Details from './Details';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
 import styles from './style.module.scss';
 
 const experiences = [
@@ -37,7 +39,7 @@ const experiences = [
 const Experience: FC = () => {
   // * State and Refs for experience section * //
   const containerRef = useRef(null);
-  const experienceRef = useRef({});
+  const cardRef = useRef(null);
 
   // * hooks to add the vertical scroll bar animation * //
   const { scrollYProgress } = useScroll({
@@ -49,6 +51,16 @@ const Experience: FC = () => {
     damping: 30,
     restDelta: 0.001,
   });
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(cardRef.current, {
+      width: '90%',
+      height: '90%',
+      duration: 4,
+      ease: 'power2.inOut',
+    });
+  }, []);
 
   return (
     <section className={styles.container} ref={containerRef}>
@@ -64,6 +76,7 @@ const Experience: FC = () => {
           ))}
         </ul>
       </div>
+      {/* <div className={styles.card} id="card1" ref={cardRef}></div> */}
     </section>
   );
 };

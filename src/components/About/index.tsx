@@ -66,7 +66,6 @@ const AboutMe = () => {
 
   // * Effect to start the animation * //
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     handleCreateAnimation();
   }, []);
 
